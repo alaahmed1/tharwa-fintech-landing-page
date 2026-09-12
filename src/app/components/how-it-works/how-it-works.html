@@ -1,1 +1,45 @@
-<p>how-it-works works!</p>
+<section
+  class="process section"
+  id="how-it-works"
+  aria-labelledby="process-title"
+>
+  <div class="container">
+    <header class="process__introduction">
+      <div>
+        <p class="eyebrow">How it works</p>
+
+        <h2 class="process__title" id="process-title">
+          A simpler path forward.
+        </h2>
+      </div>
+
+      <div class="process__summary">
+        <p>
+          Tharwa removes unnecessary complexity and gives people a clear way
+          to access and manage essential financial services.
+        </p>
+
+        <a class="button button--primary" href="#contact">
+          Start a conversation
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </header>
+
+    <ol class="process__steps">
+      <!-- An ordered list communicates that these steps follow a sequence. -->
+      @for (step of steps; track step.number) {
+        <li class="process-step">
+          <span class="process-step__number" aria-hidden="true">
+            {{ step.number }}
+          </span>
+
+          <div class="process-step__content">
+            <h3>{{ step.title }}</h3>
+            <p>{{ step.description }}</p>
+          </div>
+        </li>
+      }
+    </ol>
+  </div>
+</section>
