@@ -1,1 +1,36 @@
-<p>statistics works!</p>
+<section
+  class="impact section"
+  id="impact"
+  aria-labelledby="impact-title"
+>
+  <div class="container">
+    <header class="impact__introduction">
+      <p class="eyebrow eyebrow--light">Our impact</p>
+
+      <div class="impact__heading">
+        <h2 id="impact-title">Progress you can measure.</h2>
+
+        <p>
+          We combine accessible technology, secure infrastructure and regional
+          understanding to create meaningful financial progress.
+        </p>
+      </div>
+    </header>
+
+    <ul class="impact__grid" aria-label="Tharwa impact statistics">
+      <!-- Angular creates one item for every statistic in the array. -->
+      @for (statistic of statistics; track statistic.label) {
+        <li class="impact-card">
+          <strong class="impact-card__value">
+            {{ statistic.value }}
+          </strong>
+
+          <div class="impact-card__content">
+            <h3>{{ statistic.label }}</h3>
+            <p>{{ statistic.description }}</p>
+          </div>
+        </li>
+      }
+    </ul>
+  </div>
+</section>

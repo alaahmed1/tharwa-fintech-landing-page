@@ -1,0 +1,147 @@
+:host {
+  display: block;
+}
+
+.impact {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-primary);
+  color: var(--color-surface);
+}
+
+.impact__introduction {
+  display: grid;
+  grid-template-columns: minmax(10rem, 0.35fr) minmax(0, 1.65fr);
+  align-items: start;
+  gap: clamp(3rem, 8vw, 8rem);
+  margin-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.eyebrow--light {
+  color: var(--color-accent);
+}
+
+.impact__heading h2 {
+  max-width: 14ch;
+  margin: 0;
+  color: inherit;
+  font-size: clamp(3.25rem, 5.5vw, 5.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+}
+
+.impact__heading > p {
+  max-width: 42rem;
+  margin: 2rem 0 0;
+  color: rgba(255, 253, 247, 0.78);
+  font-size: clamp(1rem, 1.4vw, 1.125rem);
+  line-height: 1.7;
+}
+
+.impact__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  padding: 0;
+  margin: 0;
+  border-top: 0.0625rem solid rgba(255, 253, 247, 0.2);
+  border-bottom: 0.0625rem solid rgba(255, 253, 247, 0.2);
+  list-style: none;
+}
+
+.impact-card {
+  display: flex;
+  flex-direction: column;
+
+  // Keeps the value and its explanation visually connected.
+  gap: 2rem;
+
+  min-width: 0;
+  padding: clamp(2rem, 3vw, 3rem);
+}
+
+.impact-card + .impact-card {
+  border-left: 0.0625rem solid rgba(255, 253, 247, 0.2);
+}
+
+.impact-card__value {
+  color: var(--color-accent);
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 5vw, 5.5rem);
+  font-weight: 600;
+  line-height: 0.9;
+  letter-spacing: -0.055em;
+}
+
+.impact-card:nth-child(even) .impact-card__value {
+  color: var(--color-yellow, #ffca26);
+}
+
+.impact-card__content h3 {
+  margin: 0 0 0.75rem;
+  color: inherit;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.impact-card__content p {
+  margin: 0;
+  color: rgba(255, 253, 247, 0.7);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 64rem) {
+  .impact__introduction {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .impact__heading h2 {
+    max-width: none;
+  }
+
+  .impact__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .impact-card {
+    border-bottom: 0.0625rem solid rgba(255, 253, 247, 0.2);
+  }
+
+  .impact-card + .impact-card {
+    border-left: 0;
+  }
+
+  .impact-card:nth-child(even) {
+    border-left: 0.0625rem solid rgba(255, 253, 247, 0.2);
+  }
+
+  .impact-card:nth-last-child(-n + 2) {
+    border-bottom: 0;
+  }
+}
+
+@media (max-width: 38rem) {
+  .impact__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .impact-card {
+    gap: 1.5rem;
+    padding: 2rem 0;
+    border-bottom: 0.0625rem solid rgba(255, 253, 247, 0.2);
+  }
+
+  .impact-card:nth-child(even) {
+    border-left: 0;
+  }
+
+  .impact-card:nth-last-child(2) {
+    border-bottom: 0.0625rem solid rgba(255, 253, 247, 0.2);
+  }
+
+  .impact-card:last-child {
+    border-bottom: 0;
+  }
+}
