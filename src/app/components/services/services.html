@@ -1,1 +1,92 @@
-<p>services works!</p>
+<section
+  class="services section"
+  id="services"
+  aria-labelledby="services-title"
+>
+  <div class="container">
+    <header class="services__introduction">
+      <div>
+        <p class="eyebrow">What we offer</p>
+
+        <h2 class="services__title" id="services-title">
+          Financial tools built for real life.
+        </h2>
+      </div>
+
+      <p class="services__summary">
+        From everyday payments to business growth, Tharwa brings essential
+        financial services together in one connected experience.
+      </p>
+    </header>
+
+    <div class="services__grid">
+      <!-- Angular creates one card for every item in the services array. -->
+      @for (service of services; track service.id) {
+        <article class="service-card service-card--{{ service.tone }}">
+          <div class="service-card__top">
+            <span class="service-card__icon" aria-hidden="true">
+              @switch (service.icon) {
+                @case ('payment') {
+                  <svg viewBox="0 0 24 24">
+                    <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                    <path d="M3 10h18M7 15h4"></path>
+                  </svg>
+                }
+
+                @case ('transfer') {
+                  <svg viewBox="0 0 24 24">
+                    <path d="M5 8h14M15 4l4 4-4 4"></path>
+                    <path d="M19 16H5M9 12l-4 4 4 4"></path>
+                  </svg>
+                }
+
+                @case ('merchant') {
+                  <svg viewBox="0 0 24 24">
+                    <path d="M4 10v10h16V10"></path>
+                    <path d="M3 10l2-6h14l2 6"></path>
+                    <path d="M8 20v-6h8v6"></path>
+                  </svg>
+                }
+
+                @case ('bill') {
+                  <svg viewBox="0 0 24 24">
+                    <path d="M6 3h9l3 3v15H6z"></path>
+                    <path d="M14 3v4h4M9 12h6M9 16h6"></path>
+                  </svg>
+                }
+
+                @case ('wallet') {
+                  <svg viewBox="0 0 24 24">
+                    <path d="M4 7h15a2 2 0 0 1 2 2v10H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h12"></path>
+                    <path d="M16 12h5v4h-5a2 2 0 0 1 0-4z"></path>
+                  </svg>
+                }
+
+                @case ('gateway') {
+                  <svg viewBox="0 0 24 24">
+                    <rect x="4" y="3" width="16" height="18" rx="2"></rect>
+                    <path d="M8 8h8M8 12h8M8 16h4"></path>
+                  </svg>
+                }
+              }
+            </span>
+
+            <span class="service-card__label">Tharwa service</span>
+          </div>
+
+          <div class="service-card__content">
+            <p class="service-card__short-description">
+              {{ service.shortDescription }}
+            </p>
+
+            <h3>{{ service.title }}</h3>
+
+            <p class="service-card__description">
+              {{ service.description }}
+            </p>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

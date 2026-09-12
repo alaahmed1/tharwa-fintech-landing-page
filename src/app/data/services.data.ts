@@ -1,4 +1,4 @@
-import { Service } from '../models/service.model';
+import type { Service } from '../models/service.model';
 
 // Static service content is shared by the hero ecosystem and Services section.
 export const SERVICES: readonly Service[] = [
