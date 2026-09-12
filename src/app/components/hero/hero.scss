@@ -1,0 +1,203 @@
+:host {
+  display: block;
+}
+
+.hero {
+  position: relative;
+  overflow: clip;
+
+  // Keeps the main message and actions visible earlier on the page.
+  padding-block: clamp(2.5rem, 4vw, 4rem);
+}
+
+// Large background shapes repeat Tharwa's bright visual language.
+.hero::before,
+.hero::after {
+  position: absolute;
+  z-index: 0;
+  border-radius: 50%;
+  content: '';
+  pointer-events: none;
+}
+
+.hero::before {
+  bottom: -10rem;
+  left: -9rem;
+  width: 20rem;
+  aspect-ratio: 1;
+  background: var(--color-highlight);
+  opacity: 0.72;
+}
+
+.hero::after {
+  top: 3rem;
+  right: -7rem;
+  width: 15rem;
+  aspect-ratio: 1;
+  background: var(--color-accent);
+  opacity: 0.13;
+}
+
+.hero__layout {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(25rem, 0.92fr);
+  align-items: center;
+  gap: clamp(3rem, 7vw, 7rem);
+}
+
+.hero__content {
+  max-width: 44rem;
+  animation: hero-content-enter 650ms ease both;
+}
+
+.hero__title {
+  max-width: 11ch;
+  margin-bottom: 1.5rem;
+  font-size: clamp(3.5rem, 5.8vw, 5.75rem);
+  letter-spacing: -0.05em;
+  line-height: 0.9;
+}
+
+.hero__title span {
+  display: block;
+}
+
+.hero__description {
+  max-width: 38rem;
+  margin-bottom: 2rem;
+  color: var(--color-ink);
+  font-size: clamp(1.0625rem, 1.8vw, 1.25rem);
+  line-height: 1.7;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2.25rem;
+}
+
+.hero__trust-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  padding: 0;
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  list-style: none;
+}
+
+.hero__trust-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hero__trust-dot {
+  width: 0.5rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+.hero__visual {
+  position: relative;
+  min-width: 0;
+  padding: 1rem;
+  animation: hero-visual-enter 750ms 100ms ease both;
+}
+
+.hero__visual-caption {
+  max-width: 22rem;
+  margin: 1rem auto 0;
+  color: var(--color-primary);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  line-height: 1.5;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@keyframes hero-content-enter {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-visual-enter {
+  from {
+    opacity: 0;
+    transform: translateX(1.5rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 60rem) {
+  .hero {
+  padding-top: 3rem;
+}
+
+  .hero__layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .hero__content {
+    max-width: 46rem;
+  }
+
+  .hero__visual {
+    width: min(100%, 32rem);
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 48rem) {
+  .hero {
+    padding-block: 3.5rem 4.5rem;
+  }
+
+  .hero__title {
+    margin-bottom: 1.5rem;
+    font-size: clamp(3.25rem, 14vw, 4.75rem);
+  }
+
+  .hero__description {
+    margin-bottom: 1.75rem;
+  }
+
+  .hero__visual {
+    padding: 0;
+  }
+
+  .hero::before {
+    bottom: -8rem;
+    left: -10rem;
+  }
+}
+
+@media (max-width: 30rem) {
+  .hero__actions {
+    display: grid;
+  }
+
+  .hero__trust-list {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

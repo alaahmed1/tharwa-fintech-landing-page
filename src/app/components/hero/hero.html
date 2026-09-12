@@ -1,1 +1,55 @@
-<p>hero works!</p>
+<section class="hero" aria-labelledby="hero-title">
+  <div class="container hero__layout">
+    <div class="hero__content">
+      <p class="eyebrow">A brighter financial tomorrow</p>
+
+      <h1 class="hero__title" id="hero-title">
+        Grow money.
+        <span>Move freely.</span>
+      </h1>
+
+      <p class="hero__description">
+        Simple, secure financial tools designed for everyday life,
+        growing businesses, and a more prosperous future.
+      </p>
+
+      <!-- These links scroll users to the relevant landing-page sections. -->
+      <div class="hero__actions">
+        <a class="button button--primary" href="#services">
+          Explore services
+          <span aria-hidden="true">→</span>
+        </a>
+
+        <a class="button button--outline" href="#contact">
+          Contact us
+        </a>
+      </div>
+
+      <!-- Short trust statements support the primary message. -->
+      <ul class="hero__trust-list" aria-label="Tharwa benefits">
+        <li>
+          <span class="hero__trust-dot" aria-hidden="true"></span>
+          Secure by design
+        </li>
+
+        <li>
+          <span class="hero__trust-dot" aria-hidden="true"></span>
+          Built for real life
+        </li>
+
+        <li>
+          <span class="hero__trust-dot" aria-hidden="true"></span>
+          Ready to grow
+        </li>
+      </ul>
+    </div>
+
+    <div class="hero__visual">
+      <app-prosperity-ecosystem />
+
+      <p class="hero__visual-caption">
+        One connected ecosystem. Six ways to move forward.
+      </p>
+    </div>
+  </div>
+</section>
