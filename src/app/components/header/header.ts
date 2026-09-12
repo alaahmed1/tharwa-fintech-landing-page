@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, signal } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,4 +6,27 @@ import { Component } from '@angular/core';
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
-export class Header {}
+export class Header {
+  // Tracks whether the mobile navigation menu is open.
+  protected readonly isMenuOpen = signal(false);
+
+  protected toggleMenu(): void {
+    this.isMenuOpen.update((isOpen) => !isOpen);
+  }
+
+  protected closeMenu(): void {
+    this.isMenuOpen.set(false);
+  }
+
+  @HostListener('document:keydown.escape')
+  protected handleEscape(): void {
+    this.closeMenu();
+  }
+
+  @HostListener('window:resize')
+  protected handleResize(): void {
+    if (window.innerWidth >= 832) {
+      this.closeMenu();
+    }
+  }
+}
