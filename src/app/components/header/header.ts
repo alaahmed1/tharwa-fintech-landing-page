@@ -18,11 +18,13 @@ export class Header {
     this.isMenuOpen.set(false);
   }
 
+  // Allows keyboard users to close the mobile menu with Escape
   @HostListener('document:keydown.escape')
   protected handleEscape(): void {
     this.closeMenu();
   }
 
+  // Prevents the mobile menu from remaining open after switching to desktop.
   @HostListener('window:resize')
   protected handleResize(): void {
     if (window.innerWidth >= 832) {
