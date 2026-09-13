@@ -1,1 +1,45 @@
-<p>footer works!</p>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__main">
+      <div class="footer__brand-column">
+        <a class="footer__brand" href="#" aria-label="Return to the top">
+          THARWA<span>.</span>
+        </a>
+
+        <p>
+          Clear financial tools for people, businesses and a more prosperous
+          regional future.
+        </p>
+      </div>
+
+      <nav class="footer__navigation" aria-label="Footer navigation">
+        <p class="footer__label">Explore</p>
+
+        <ul>
+          <!-- Footer links are generated from the TypeScript array. -->
+          @for (link of navigationLinks; track link.href) {
+            <li>
+              <a [href]="link.href">{{ link.label }}</a>
+            </li>
+          }
+        </ul>
+      </nav>
+
+      <div class="footer__contact">
+        <p class="footer__label">Start a conversation</p>
+
+        <a href="#contact">
+          Contact Tharwa
+          <span aria-hidden="true">→</span>
+        </a>
+
+        <p>Muscat, Oman</p>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>© {{ currentYear }} Tharwa. Concept project.</p>
+      <p>Designed and developed with Angular.</p>
+    </div>
+  </div>
+</footer>
