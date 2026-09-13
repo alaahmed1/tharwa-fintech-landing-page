@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-// Defines the structure of every footer navigation link.
+// Defines the structure shared by navigation and social links.
 interface FooterLink {
   label: string;
   href: string;
@@ -22,5 +22,12 @@ export class Footer {
     { label: 'Impact', href: '#impact' },
     { label: 'How it works', href: '#how-it-works' },
     { label: 'Contact', href: '#contact' },
+  ];
+
+  // Placeholder social destinations for the fictional Tharwa brand.
+  readonly socialLinks: readonly FooterLink[] = [
+    { label: 'LinkedIn', href: 'https://www.linkedin.com' },
+    { label: 'Instagram', href: 'https://www.instagram.com' },
+    { label: 'X', href: 'https://x.com' },
   ];
 }
