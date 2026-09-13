@@ -89,3 +89,25 @@
   npm run build
   ```
 * Committed and pushed each completed development checkpoint to GitHub.
+
+
+
+# Phase 3 — Main Content and Functionality
+* Added the About section with company introduction, mission, vision and guiding principles.
+* Improved card spacing to keep the content balanced and remove excessive empty space.
+* Added the Services section using reusable typed service data.
+* Used Angular @for to generate service cards automatically.
+* Used Angular @switch to display the correct SVG icon for each service.
+* Added the Impact section with four typed statistics.
+* Added a responsive How It Works timeline with three ordered steps.
+* Connected the How It Works button to the Contact section.
+* Built a functional contact form using Angular Reactive Forms.
+* Added required-field, email-format and minimum-length validation.
+* Used an Angular signal to display the successful validation message.
+* Clearly indicated that the demonstration form does not send data to a backend.
+* Added a responsive footer with generated navigation links.
+* Added an automatically updating copyright year.
+* Used semantic HTML and accessibility attributes throughout the sections.
+* Tested the page on desktop, iPhone SE and iPhone 12 Pro layouts.
+* Ran successful production builds after each major section.
+* Committed and pushed all Phase 3 changes to GitHub.
